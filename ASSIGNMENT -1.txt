@@ -1,0 +1,915 @@
+//1. Write a program which will greet you with your name.
+
+code:
+
+import java.util.Scanner;
+
+public class Greeting {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter your name: ");
+        String s = input.next();
+
+        System.out.println("Welcome to the world of programming " + s + "!");
+
+
+    }
+}
+
+output:
+
+Please enter your name: Shivraj 
+Welcome to the world of programming Shivraj!
+
+
+//2. Write a program which will print greeting message for your 5 friends. Friends name should be entered as command line arguments.
+
+code:
+
+public class Welcome{
+  public static void main(String[] args){
+   
+System.out.println("Welcome to the world of programming " + args[0]); 
+System.out.println("Welcome to the world of programming " + args[1]); 
+System.out.println("Welcome to the world of programming " + args[2]); 
+System.out.println("Welcome to the world of programming " + args[3]); 
+System.out.println("Welcome to the world of programming " + args[4]); 
+
+   }
+}
+
+output:
+
+Welcome to the world of programming Shivraj
+Welcome to the world of programming Shruti
+Welcome to the world of programming Dhvani
+Welcome to the world of programming Murli
+Welcome to the world of programming Harshit
+
+
+//3. Write a program which will print properties like size, min-value and max-value of each primitive number types in java.(Use appropriate wrapper class).
+
+code:
+
+class Size{
+
+	public static void main(String[] args){
+
+		String dataType = args[0];
+		if (dataType.equalsIgnoreCase("byte")){
+			System.out.println("print size of byte: "+ Byte.SIZE);
+	     		System.out.println("print min value: "+ Byte.MIN_VALUE);
+            	System.out.println("print max value: "+ Byte.MAX_VALUE);
+		}
+		
+ 	
+		if (dataType.equalsIgnoreCase("short")){  		
+            System.out.println("print size of short: "+ Short.SIZE);
+	      System.out.println("print min value: "+ Short.MIN_VALUE);
+            System.out.println("print max value: "+ Short.MAX_VALUE);
+           }
+
+            if (dataType.equalsIgnoreCase("integer")){
+            System.out.println("print size of integer: "+ Integer.SIZE);
+	      System.out.println("print min value: "+ Integer.MIN_VALUE);
+            System.out.println("print max value: "+ Integer.MAX_VALUE);
+            }
+
+            if (dataType.equalsIgnoreCase("long")){
+            System.out.println("print size of long: "+ Long.SIZE);
+	      System.out.println("print min value: "+ Long.MIN_VALUE);
+            System.out.println("print max value: "+ Long.MAX_VALUE);
+            }
+
+            if (dataType.equalsIgnoreCase("float")){
+		System.out.println("print size of float: "+ Float.SIZE);
+	      System.out.println("print min value: "+ Float.MIN_VALUE);
+            System.out.println("print max value: "+ Float.MAX_VALUE);
+            }
+            
+            if (dataType.equalsIgnoreCase("double")){
+		System.out.println("print size of double: "+ Double.SIZE);
+	      System.out.println("print min value: "+ Double.MIN_VALUE);
+            System.out.println("print max value: "+ Double.MAX_VALUE);
+            }
+
+		
+	}
+}
+
+
+output:
+
+java Example short
+print size of short: 16
+print min value: -32768
+print max value: 32767
+
+
+//4. Write a program which will print result of student according to marks.like A grade – marks 90 to 100, B grade – marks 80 to 90, 
+  C grade- marks 60 to 80.D  grade – marks 45 to 60.E grade – marks 35 to 45. Fail – marks below 35.(Use Else-if ladder).
+
+code:
+
+import java.util.Scanner;
+
+public class Marks{
+    
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the marks of student");
+
+        int marks = input.nextInt();
+
+        input.close();
+
+        if(marks<=100 && marks>=90){
+            System.out.println("A grade");
+        }else if(marks<90 && marks>=80){
+            System.out.println("B grade");
+        }else if(marks<80 && marks>=60){
+            System.out.println("C grade");
+        }else if(marks<60 && marks>=45){
+            System.out.println("D grade");
+        }else if(marks<45 && marks>=35){
+            System.out.println("E grade");
+        }else if(marks<35){
+            System.out.println("FAIL");
+        }
+        
+    }
+}
+
+
+output:
+
+Enter the marks of student
+87
+B grade
+
+//5.Write a program which demonstrate conditional operator, 
+  compound assignment operator, pre-post increment and decrement operator, bitwise operator, logical short circuit operator.
+
+
+code:
+
+public class operator{
+
+    public static void main(String args[]) {
+
+        // conditional operators
+        int x=5, y=4, z=7;  
+        System.out.println(x>y && x>z);
+        System.out.println(x>z || y<z); 
+
+        // compound assignment opeator
+
+        int a = 10;
+        int c= 15 ;
+  
+        c += a ;
+        System.out.println("c += a  = " + c );
+  
+        c -= a ;
+        System.out.println("c -= a = " + c );
+  
+        c *= a ;
+        System.out.println("c *= a = " + c );
+  
+        c /= a ;
+        System.out.println("c /= a = " + c );
+  
+        c %= a ;
+        System.out.println("c %= a  = " + c );
+
+        // post and pre increment
+
+        int i = 0;
+        System.out.println("Post-Increment");
+        System.out.println(i++);
+  
+        int j = 0;
+        System.out.println("Pre-Increment");
+        System.out.println(++j);
+
+        // post and pre decrement
+
+        i = 0;
+        System.out.println("Post-Decrement");
+        System.out.println(i++);
+  
+        j = 0;
+        System.out.println("Pre-Decrement");
+        System.out.println(++j);
+
+        //bitwise operator
+
+        x = 5;
+        y = 7;
+
+        System.out.println("a&b = " + (x & y));
+ 
+        System.out.println("a|b = " + (x | y));
+ 
+        System.out.println("a^b = " + (x ^ y));
+
+        System.out.println("~a = " + ~x);
+
+        
+    }
+
+
+    
+}
+
+output:
+
+false
+true
+c += a  = 25
+c -= a = 15
+c *= a = 150
+c /= a = 15
+c %= a  = 5
+Post-Increment
+0
+Pre-Increment
+1
+Post-Decrement
+0
+Pre-Decrement
+1
+a&b = 5
+a|b = 7
+a^b = 2
+~a = -6
+
+
+
+
+
+
+
+//6.Write a program to print first N prime numbers.
+
+code:
+
+import java.util.*;
+
+class Nprime{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int  i,n,p,count,flag;
+
+		System.out.print("Enter the number of prime terms you want: ");
+    		n=sc.nextInt();
+    		System.out.println("First "+n+" prime numbers are :-"); 
+
+		p=2;
+    		i=1; 
+	    	while(i<=n)
+    		{
+        		flag=1;
+        		for(count=2;count<=p-1;count++)
+        		{
+            			if(p%count==0)  
+            			{
+	            			flag=0;
+	            			break;     
+            			} 	 
+        		}
+            		if(flag==1)
+            		{
+               	 		System.out.print(p+" ") ;
+	            		i++;
+            		}
+        		p++;
+    		}
+	}
+}
+
+
+output:
+
+Enter the number of prime terms you want: 4
+First 4 prime numbers are :-
+2 3 5 7
+
+
+//7.Write a program which will create an array of integers and perform
+  following operation:
+  1) Sum 2) product 3) Numbers divisible by 15 4) Maximum Value
+  5) Minimum Value 6) Sort
+
+
+import java.util.Scanner;
+
+public class arrayminmax {
+    public static void main(String args[]) 
+    {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter the size of array");
+        int n=sc.nextInt();
+        int[] array= new int[n];
+
+        for(int i=0 ;i<n ; i++ ){
+            array[i]= sc.nextInt();
+        }
+        System.out.println("Enter the cases 1.sum 2. product 3.max 4.min 5.sort 6. division ");
+        int e=sc.nextInt();
+
+        switch(e){
+        case 1:
+            sum(array, n);
+            break;
+        case 2:
+            product(array, n);
+            break;
+        
+        case 3:
+            maxnum(array, n);
+            break;
+
+        case 4:
+            minnum(array, n);
+            break;
+        
+        case 5:
+            sort(array, n);
+            break;
+        
+        case 6:
+            div(array, n);
+            break;
+        }
+
+
+        sc.close();
+        
+    }
+
+    static void sum(int array[], int n){
+        int sum=0;
+        for(int i=0;i<n; i++){
+            sum=sum+ array[i];
+        }
+        System.out.println("Sum " +sum);
+    }
+
+    static void product(int array[] , int n){
+        int prod=1;
+        for(int i=0;i<n; i++){
+            prod=prod *array[i];
+        }
+        System.out.println("Product " +prod);
+    }
+
+    static void maxnum(int array[], int n){
+        int max=array[0];
+        for(int i=1 ; i<n ; i++){
+            if(array[i]>max){
+                max=array[i];
+            }
+        }
+    }
+
+    static void minnum(int array[], int n){
+        int min=array[0];
+        for(int i=1 ; i<n ; i++){
+            if(array[i]<min){
+                min=array[i];
+            }
+        }
+    }
+
+    static void sort(int array[] , int n){
+
+        for (int i = 0; i < array.length; i++)   
+    {  
+        for (int j = i + 1; j < array.length; j++)   
+        {  
+        int tmp = 0;  
+        if (array[i] > array[j])   
+        {  
+        tmp = array[i];  
+        array[i] = array[j];  
+        array[j] = tmp;  
+        }  
+    }
+    System.out.println(array[i]);  
+            }  
+        } 
+            
+    static void div(int array[], int n){
+        for (int i = 0; i < array.length; i++) {
+            if(array[i]%15==0){
+                System.out.println("the number divisible by 15 " + array[i]);
+            }
+        }
+    }
+    }
+
+output:
+Enter the size of array: 4
+2 4 6 8
+Enter the cases 1.sum 2. product 3.max 4.min 5.sort 6. division
+2
+Product 384
+
+
+// 8. Write an interactive program to print a string entered in a pyramid form.
+      For instance, the string “stream” has to be displayed as follows:
+
+code:
+
+import java.util.Scanner;
+
+public class Spattern {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the name");
+        String str = sc.nextLine();
+        sc.close();
+        int i, j, row =str.length() ;
+        for (i = 0; i < row; i++) {
+            for (j = row - i; j > 1; j--) {
+                System.out.print(" ");
+            }
+            for (j = 0; j <= i; j++) {
+               
+                System.out.print(str.charAt(j) + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+output:
+
+Enter the name: Stream
+     S
+    S t
+   S t r
+  S t r e
+ S t r e a
+S t r e a m
+
+
+// 9.Print following diamond pattern 
+
+code:
+
+public class diamond {
+ 
+    public static void main(String[] args)
+    {
+        int number = 3;
+ 
+ 
+        for (int i = 1; i <= number; i++) {
+ 
+            for ( int j = 1; j <= number - i; j++) {
+                System.out.print(" ");
+            }
+ 
+            for (int k = 1; k <= i * 2 - 1; k++) {
+                System.out.print("*");
+            }
+ 
+            System.out.println();
+        }
+ 
+        for (int i = number - 1; i > 0; i--) {
+ 
+            for (int j = 1; j <= number - i; j++) {
+                System.out.print(" ");
+            }
+ 
+            for (int k = 1; k <= i * 2 - 1; k++) {
+                System.out.print("*");
+            }
+ 
+            System.out.println();
+        }
+    }
+}
+
+
+output:
+
+  *
+ ***
+*****
+ ***
+  *
+
+
+//10. Write a program to accept a line and check how many consonants and
+vowels are there in line.
+
+code:
+
+
+import java.util.Scanner;
+
+public class Count {    
+    public static void main(String[] args) {     
+        Scanner sc = new Scanner(System.in);   
+        int vCount = 0, cCount = 0;    
+        String str = sc.nextLine();    
+        sc.close();
+        str = str.toLowerCase();    
+            
+        for(int i = 0; i < str.length(); i++) {    
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {    
+
+                vCount++;    
+            }  
+            else {         
+                cCount++;    
+            }    
+        }    
+        System.out.println("Number of vowels: " + vCount);    
+        System.out.println("Number of consonants: " + cCount);    
+    }    
+}   
+
+output:
+
+moon
+Number of vowels: 2
+Number of consonants: 2
+
+//11.Write a program to count the number of words that start with capital
+letters.
+
+code:
+
+import java.util.Scanner;
+
+public class capital{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str = sc.nextLine();
+
+        sc.close();
+
+        int count=0;
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) >= 'A' && str.charAt(i)<= 'Z' && str.charAt(i-1)==' '){
+                count++;
+            }
+            
+        }
+        System.out.println("Total capital letter are :" +count);
+        
+        
+    }
+    
+}
+
+output:
+
+Enter the string
+shiv
+Total capital letter are :0
+
+//12.Create a class which ask the user to enter a sentence, and it should display
+count of each vowel type in the sentence. Display the total count of each
+vowel and digits for all sentences.
+
+code:
+
+
+import java.util.Scanner;
+
+public class countvowelandnumber {
+    
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        sc.close();
+        str =str.toLowerCase();
+        int vCount=0, nCount=0 ;
+
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i)== 'a' || str.charAt(i)== 'e' || str.charAt(i)== 'i' ||str.charAt(i)== 'o' || str.charAt(i)== 'u'){
+                vCount++;
+            }
+            else if(str.charAt(i) >= '0' && str.charAt(i) <= '9'){
+                nCount++;
+            }
+            
+        }
+        System.out.println("the vowels are "+ vCount + " number are " + nCount);
+        
+    }
+}
+
+output:
+
+moon
+the vowels are 2 number are 0
+
+
+//13. Write a program which will perform following functionality on String:
+a) convert to uppercase b) convert to lowercase c) count total words d)
+substring e) If String ends with Java then concat standardEdition to it f) trim
+g) string length h) Check weather two strings are equal or not.
+
+code:
+
+import java.util.Scanner;
+
+public class Stringfunctionality {
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the string ");
+        String s= sc.nextLine();
+
+
+        System.out.println("Upper case of given string" + s.toUpperCase());
+        System.out.println("Lower case of given string" + s.toLowerCase());
+        System.out.println("Number of words in string" );
+        countwords(s);
+
+        System.out.println("Trimed given string " + s.trim());
+        System.out.println("Length of given string "+ s.length());
+        if((s.substring(s.length()-4 , s.length())).equals("Java")){
+            System.out.println(s.concat("standardEdition"));
+        }else{
+            System.out.println(" String does not contain java");
+        }
+
+        String s2="Hello Java";
+        if(s.equals(s2)){
+            System.out.println(" Given two string are equal");
+        }
+        sc.close();
+    }
+
+    public static void countwords(String str){
+        
+        int count = 1;
+ 
+        for (int i = 0; i < str.length() - 1; i++)
+        {
+            if ((str.charAt(i) == ' ') && (str.charAt(i + 1) != ' '))
+            {
+                count++;
+            }
+        }
+        System.out.println("Number of words in a string : " + count);
+    }
+}
+
+output:
+
+Enter the string 
+java
+Upper case of given stringJAVA
+Lower case of given stringjava
+Number of words in string
+Number of words in a string : 1
+Trimed given string java
+Length of given string 4
+ String does not contain java
+
+
+
+//14.Perform addition and multiplication of two matrix.
+     
+code:
+
+
+import java.util.Scanner;
+
+public class matrixaddmulti {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size for matrix");
+        int n= sc.nextInt();
+
+        int[][] arr1= new int[n][n];
+        System.out.println("Enter matrix 1");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                 arr1[i][j] = sc.nextInt();
+            }
+        }
+
+        int[][] arr2= new int[n][n];
+        System.out.println("Enter matrix 2");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                 arr2[i][j] = sc.nextInt();
+            }
+        }
+        sc.close();
+
+        int[][] sum = new int[n][n];
+        System.out.println("The sum is ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                 sum[i][j]= arr1[i][j] + arr2[i][j];
+                 System.out.print(sum[i][j]);
+            }
+            System.out.println(" ");
+        }
+        
+
+        int[][] prod = new int[n][n];
+        System.out.println(" The product is");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                prod[i][j]=1;
+                prod[i][j]= arr1[i][j] * arr2[i][j];
+                System.out.print(prod[i][j]);
+            }
+            System.out.println(" ");
+        }
+        
+    }
+    
+}
+
+output:
+
+Enter the size for matrix
+3
+Enter matrix 1
+1 5 3
+4 5 6
+8 9 5
+Enter matrix 2
+1 2 5
+6 3 2
+4 5 8
+The sum is 
+278
+1088
+121413
+ The product is
+11015
+241512
+324540
+
+//15.Write a program which will overload method calculateArea which
+ calculates area of different shapes like circle, rectangle and square.
+ 
+code:
+
+
+public class Shape{
+
+    public static void main(String args[]) 
+	{
+	   area(5);
+	   area(11,12);
+	   area(2.5);
+    }
+
+    static void area(int x)
+    {
+        System.out.println("the area of the square is "+ x*x +" sq units");
+    }
+    static void area(float x , float y)
+    {
+        System.out.println("the area of the rectangle is "+x*y+" sq units");
+    }
+    static void area(double x)
+    {
+        double z = 3.
+
+14 * x * x;
+        System.out.println("the area of the circle is "+z+" sq units");
+    }
+
+}
+
+OUTPUT:
+
+the area of the square is 25 sq units
+the area of the rectangle is 132.0 sq units
+the area of the circle is 19.625 sq units
+
+
+// 16. Write a program which will demonstrate the java.util.Arrays class
+   methods like sort, copyOf, copyOfRange, fill, binarySearch, equals,
+   toString etc..
+
+code:
+
+
+import java.util.Arrays;
+
+public class arraymodule {
+
+    public static void main(String args[]) {
+
+        int[] marks = {20,1 ,11,22,77,50,0,100};
+
+        Arrays.sort(marks);
+
+        System.out.println( Arrays.toString(marks));
+        
+        Arrays.binarySearch(marks, 1);
+        
+        System.out.println( Arrays.toString(marks));
+
+        int arr[] = Arrays.copyOf(marks, 10);
+
+        System.out.println( Arrays.toString(marks));
+
+        Arrays.toString( Arrays.copyOfRange(marks, 1, 3));
+
+        Arrays.equals(marks, arr);
+
+        Arrays.fill(marks, 5);
+
+        System.out.println(Arrays.toString(marks));
+
+        Arrays.copyOfRange(marks, 1 , 3);
+
+        System.out.println(Arrays.toString(marks));
+    }
+}
+
+output:
+
+[0, 1, 11, 20, 22, 50, 77, 100]
+[0, 1, 11, 20, 22, 50, 77, 100]
+[0, 1, 11, 20, 22, 50, 77, 100]
+[5, 5, 5, 5, 5, 5, 5, 5]
+[5, 5, 5, 5, 5, 5, 5, 5]
+
+
+//17.Write a program which will make calculator application. Use Math class
+  methods like pow, abs, max, min, exp, log, sqrt, cbrt, sin etc...
+ 
+code:
+
+
+ public class Mathclass {
+    
+    public static void main(String args[]) {
+
+        double x = 28;    
+        double y = 4;
+        double z= -4.56;    
+          
+        
+        System.out.println("Maximum number of x and y is: " +Math.max(x, y));   
+          
+        
+        System.out.println("Square root of y is: " + Math.sqrt(y)); 
+        
+        System.out.println("Cube root of x is :" + Math.cbrt(x));  
+        
+        System.out.println("Power of x and y is: " + Math.pow(x, y));      
+
+        System.out.println("Round off to nearest integer of z" +Math.abs(z));
+        
+        System.out.println("Logarithm of x is: " + Math.log(x));   
+                
+        System.out.println("log10 of x is: " + Math.log10(x));     
+  
+        System.out.println("exp of a is: " +Math.exp(x)); 
+
+        System.out.println("Sin value of given y is " + Math.sin(y));
+
+        System.out.println("Sin value of given y is " + Math.cos(y));
+
+        System.out.println("Sin value of given y is " + Math.sinh(y));
+
+        System.out.println("Sin value of given y is " + Math.cosh(y));
+        
+    }
+}
+
+
+output:
+
+Maximum number of x and y is: 28.0
+Square root of y is: 2.0
+Cube root of x is :3.0365889718756627
+Power of x and y is: 614656.0
+Round off to nearest integer of z4.56
+Logarithm of x is: 3.332204510175204
+log10 of x is: 1.4471580313422192
+exp of a is: 1.446257064291475E12
+Sin value of given y is -0.7568024953079282
+Sin value of given y is -0.6536436208636119
+Sin value of given y is 27.28991719712775
+Sin value of given y is 27.308232836016487
+
+
+
+
+
+
+
